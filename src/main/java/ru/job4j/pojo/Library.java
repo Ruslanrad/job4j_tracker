@@ -25,7 +25,7 @@ public class Library {
         books[0] = cleanCode;
         books[3] = book1;
         for (int i = 0; i < books.length; i++) {
-            if (books[i].getTitle().equals("Clean code")) {
+            if ("Clean code".equals(books[i].getTitle())) {
                 System.out.println(books[i].getTitle() + " - " + books[i].getPages() + " стр.");
                 break;
             }
