@@ -25,7 +25,15 @@ public class StartUI {
         }
     }
 
-    private static void findItemByName(Input input, Tracker tracker) {
+    public static void createItem(Input input, Tracker tracker) {
+        System.out.println("=== Создание новой заявки ===");
+        String name = input.askStr("Введите имя ");
+        Item item = new Item(name);
+        tracker.add(item);
+        System.out.println("Добавленная заявка: " + item);
+    }
+
+    public static void findItemByName(Input input, Tracker tracker) {
         System.out.println("=== Показать заявки по имени ===");
         String name = input.askStr("Введите имя заявки: ");
         Item[] items = tracker.findByName(name);
@@ -38,7 +46,7 @@ public class StartUI {
         }
     }
 
-    private static void findItemById(Input input, Tracker tracker) {
+    public static void findItemById(Input input, Tracker tracker) {
         System.out.println("=== Показать заявку по id ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
@@ -49,7 +57,7 @@ public class StartUI {
         }
     }
 
-    private static void deleteItem(Input input, Tracker tracker) {
+    public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Удаление заявки ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
@@ -57,7 +65,7 @@ public class StartUI {
         System.out.println(item != null ? "Заявка удалена успешно." : "Ошибка удаления заявки.");
     }
 
-    private static void replaceItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Редактирование заявки ===");
         int id = input.askInt("Введите id: ");
         String name = input.askStr("Введите имя: ");
@@ -69,7 +77,7 @@ public class StartUI {
         }
     }
 
-    private static void findAllItems(Tracker tracker) {
+    public static void findAllItems(Tracker tracker) {
         System.out.println("=== Вывод всех заявок ===");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
@@ -79,14 +87,6 @@ public class StartUI {
         } else {
             System.out.println("Хранилище еще не содержит заявок");
         }
-    }
-
-    private static void createItem(Input input, Tracker tracker) {
-        System.out.println("=== Создание новой заявки ===");
-        String name = input.askStr("Введите имя ");
-        Item item = new Item(name);
-        tracker.add(item);
-        System.out.println("Добавленная заявка: " + item);
     }
 
     private void showMenu() {
