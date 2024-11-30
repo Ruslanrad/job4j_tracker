@@ -25,9 +25,9 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        Output output = new StubOutput();
         UserAction[] actions = new UserAction[]{
                 new CreateAction(output),
                 new FindAllAction(output),
