@@ -9,5 +9,15 @@ public class UsageMap {
         for (String key : map.keySet()) {
             System.out.println(map.get(key) + " - " + key);
         }
+        System.out.println("-------------------------");
+        map.put("Kuzya@yandex.ru", "Petrovuch Kuzya");
+        for (String key : map.keySet()) {
+            System.out.println(map.get(key) + " - " + key);
+        }
+        System.out.println("-------------------------");
+        map.put("Kuzya@yandex.ru", "Artem Petrovich");
+        for (String key : map.keySet()) {
+            System.out.println(map.get(key) + " - " + key);
+        }
     }
 }
