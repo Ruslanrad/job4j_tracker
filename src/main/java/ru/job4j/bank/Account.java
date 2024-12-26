@@ -2,6 +2,11 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс описывает Аккаунт закрепленный за Пользователем в банке
+ * @author Залилов Руслан
+ * @version 1.0
+ */
 public class Account {
     private String requisite;
     private double balance;
@@ -27,6 +32,10 @@ public class Account {
         this.balance = balance;
     }
 
+    /**
+     * Метод equils переопределён для правильной работы тестов
+     * @return true or faulce
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -39,6 +48,10 @@ public class Account {
         return Objects.equals(requisite, account.requisite);
     }
 
+    /**
+     * Метод hashCode переопределён для правильной работы тестов
+     * @return числовое значение hash
+     */
     @Override
     public int hashCode() {
         return Objects.hash(requisite);

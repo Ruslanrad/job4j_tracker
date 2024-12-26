@@ -2,6 +2,11 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс User описывает пользователя банка и его данные(паспорт, имя)
+ * @author Залилов Руслан
+ * @version 1.0
+ */
 public class User {
     private String passport;
     private String username;
@@ -27,6 +32,10 @@ public class User {
         this.username = username;
     }
 
+    /**
+     * Метод equils переопределён для правильной работы тестов
+     * @return true or faulce
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -39,6 +48,10 @@ public class User {
         return Objects.equals(passport, user.passport);
     }
 
+    /**
+     * Метод hashCode переопределён для правильной работы тестов
+     * @return числовое значение hash
+     */
     @Override
     public int hashCode() {
         return Objects.hash(passport);
