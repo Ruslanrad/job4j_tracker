@@ -11,13 +11,6 @@ public class DepartmentsDescComparator implements Comparator<String> {
         if (compareOnePart != 0) {
             return compareOnePart;
         }
-        int count = Math.min(left.length(), right.length());
-        for (int i = 0; i < count; i++) {
-            int compareChar = Character.compare(left.charAt(i), right.charAt(i));
-            if (compareChar != 0) {
-                return compareChar;
-            }
-        }
-        return Integer.compare(left.length(), right.length());
+        return left.compareTo(right);
     }
 }
