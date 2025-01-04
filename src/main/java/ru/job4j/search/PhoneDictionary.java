@@ -13,15 +13,15 @@ public class PhoneDictionary {
     public ArrayList<Person> find(String key) {
         Predicate<Person> containsName = person -> person.getName().contains(key);
         Predicate<Person> containsSurname = person -> person.getSurname().contains(key);
-        Predicate<Person> containsPfone = person -> person.getPhone().contains(key);
-        Predicate<Person> containsAdress = person -> person.getAddress().contains(key);
-        Predicate<Person> combine = containsName
+        Predicate<Person> containsPhone = person -> person.getPhone().contains(key);
+        Predicate<Person> containsAddress = person -> person.getAddress().contains(key);
+        var combinePredicates = containsName
                 .or(containsSurname)
-                .or(containsPfone)
-                .or(containsAdress);
-        ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
-            if (combine.test(person)) {
+                .or(containsPhone)
+                .or(containsAddress);
+        var result = new ArrayList<Person>();
+        for (var person : persons) {
+            if (combinePredicates.test(person)) {
                 result.add(person);
             }
         }
